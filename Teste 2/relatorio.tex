@@ -1,0 +1,66 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+
+\title{Teste 2 - MC758}
+\author{Rian Radeck Santos Costa - 187793}
+\date{17 de Setembro de 2022}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{}
+	Suponha que existam 2 equilibríos puros para a matriz, eles estão localizados em $(i, j)$ e $(i', j')$, a utilidade dos jogadores é respectivamente $(a, -a)$ e $(d, -d)$. Agora vamos olhar para as células $(i, j')$ e $(i', j)$, a utilidade dos jogadores é respectivamente $(b, -b)$ e $(c, -c)$. Sabemos que $(i, j)$ é um equilíbrio, portanto:
+	$$
+	a > c
+	$$$$
+	-a > -b \Leftrightarrow a < b
+	$$
+	
+	Analogamente para o outro equilíbrio:
+	$$
+	d > b
+	$$$$
+	-d > -c \Leftrightarrow d < c
+	$$
+
+	Sendo assim:
+	$$
+	a > c > d > b > a
+	$$
+
+	O que é uma contradição, assumindo que todos os valores são diferentes $(a \neq b \neq c \neq d)$.
+
+\section{}
+	Em um equilíbrio do nosso jogo a distribuição de probabilidade do jogador linha é $p = (p_0, p_1, p_2)$ e do jogador coluna é $q = (q_0, q_1)$. Assim podemos escrever a utilidade dos jogadores da seguinte forma:
+	$$
+	u_L = (p_0q_0 + 4p_0q_1) + (p_1q_1 + 0) + (2p_2q_0 + p_2q_1)
+	$$$$
+	u_C =  (4p_0q_0 + 3p_0q_1) + (5p_1q_0 + 6p_1q_1) + (0 + 2p_2q_1)
+	$$
+
+	Reescrevendo:
+	$$
+	u_L = p_0(q_0 + 4q_1) + p_1(q_0) + p2(2q_0 + q_1)
+	$$$$
+	u_C = q_0(4p_0 + 5p_1) + q_1(3p_0 + 6p_1 + 2p_2)
+	$$
+
+	Vamos então considerar um equilíbrio que $q_0 \neq 0$ e $q_1 \neq 0$. Dessa forma podemos concluir então que $4p_0 + 5p_1 = 3p_0 + 6p_1 + 2p_2 \Leftrightarrow p_0 = p_1 + 2p_2$, mas olhando para o jogador linha, podemos obervar que o fator que multiplica $p_0$ é maior que o fator de $p_1$, já que $q_1 \neq 0$. Portanto podemos concluir que $p_0 = 2p_2 \Leftrightarrow p_0 = \frac{2}{3}, p_1 = 0, p_2 = \frac{1}{3}$. 
+
+	Como $p_0 \neq 0$ e $p_2 \neq 0$, podemos concluir que $q_0 + 4q_1 = 2q_0 + q_1 \Leftrightarrow q_0 = \frac{3}{4}, q_1 = \frac{1}{4}$.
+
+	Encontramos então nosso primeiro equilíbrio:
+	$$
+	p = \left(\frac{2}{3}, 0, \frac{1}{3} \right)
+	$$$$
+	q = \left(\frac{3}{4}, \frac{1}{4} \right)
+	$$
+
+	Agora vamos analisar o caso que $q_0 = 0$ e $q_1 = 1$. Assim a utilidade do jogador linha será $u_L = 4p_0 + p_2$, portanto a melhor escolha para ele é $p_0 = 1$. Analisando agora a utilidade do jogador coluna, percebemos que ela seria $u_C = 4q_0 + 3q_1$, sendo assim faria mais sentido para ele que $q_0$ fosse $1$, portanto não existe equilíbrio nesse caso.
+
+	Finalmente basta analisarmos o caso $q_0 = 1$ e $q_1 = 0$. Assim a utilidade do jogador linha será $u_L = p_0 + p_1 + 2p_2$, portanto a melhor escolha para ele é $p_2 = 1$. Analisando agora a utilidade do jogador coluna, temos que $u_C = 2q_1$ e faria mais sentido para ele que $q_1$ fosse $1$, logo também não existem equilíbrio nesse caso.
+
+\end{document}
